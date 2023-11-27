@@ -1,0 +1,23 @@
+.container {
+    background-color: black;
+    border: 10px solid;
+    height: 400px;
+    width: 250px;
+    display: grid;
+
+}
+
+.display {
+    background-color:white;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+button {
+    margin: 1px;
+    border-radius: 5%;
+    font-weight: initial;
+    font-size: 25px;
+    font-family: monospace;
+    color: black;
+}
