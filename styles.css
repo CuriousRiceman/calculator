@@ -3,8 +3,6 @@
     border: 10px solid;
     height: 400px;
     width: 250px;
-    display: grid;
-
 }
 
 .display {
@@ -20,4 +18,12 @@ button {
     font-size: 25px;
     font-family: monospace;
     color: black;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
+    width: 100%;
+    height: calc(100% - 60px);
 }
