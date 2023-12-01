@@ -21,6 +21,7 @@ function divide(x , y) {
 let currentInput = "0";
 let previousInput = null;
 let currentOperation = null;
+
 const display = document.querySelector('.display');
 
 document.querySelectorAll('.number').forEach(button => {
@@ -44,12 +45,15 @@ function handleNumberInput(number) {
         if (stringToArray.length > 1) {
             let slicedInputAndConcat = stringToArray.slice(0, -1).join("");
             currentInput = slicedInputAndConcat;
-        } //MUST FIX - example is 48 + 12 - 60, del 0 so its 6,
-            //but add a num and equ doesnt work
-    } else if (number === "del") {
+        } else {
         currentInput = "0";
-    } else if (currentInput === "0" && number === ".") {
-        currentInput += number;
+        }
+    } else if (number === ".") {
+        if (currentInput.includes(".")) {
+            return;
+        } else {
+            currentInput += ".";
+        }
     } else if (currentInput === "0") {
         currentInput = number;
     } else {
@@ -74,24 +78,23 @@ function calculateResult() {
     if (!isNaN(num1) && !isNaN(num2)) {
         switch (currentOperation) {
             case '+':
-                currentInput = num1 + num2;
+                currentInput = (num1 + num2).toString();
                 break;
             case '-':
-                currentInput = num1 - num2;
+                currentInput = (num1 - num2).toString();
                 break;
             case '*':
-                currentInput = num1 * num2;
+                currentInput = (num1 * num2).toString();
                 break;
             case '/':
-                currentInput = num2 !== 0 ? num1 / num2 : 'Error';
+                currentInput = num2 !== 0 ? (num1 / num2).toString() : 'Error';
                 break;
             case '**':
-                currentInput = num1 ** num2;
+                currentInput = (num1 ** num2).toString();
                 break;
         }
     }
     updateDisplay();
-    currentInput = null;
     previousInput = null;
 }
 
