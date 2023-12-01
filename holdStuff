@@ -1,7 +1,0 @@
-// if (previousInput !== null && number === "del") {
-    //     let stringToArray = previousInput.split("");
-    //     if (stringToArray.length > 1) {
-    //         let slicedInputAndConcat = stringToArray.slice(0, -1).join("")
-    //         currentInput = slicedInputAndConcat;
-    //     }
-    // } else 
